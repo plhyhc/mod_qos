@@ -1,0 +1,97 @@
+
+QS_RequestHeaderFilter rules:
+
+ name=Accept, action=drop, size=300, pattern=^([a-zA-Z0-9_\*\+\-]+/[a-zA-Z0-9_\*\+\.\-]+(;[ ]?[a-zA-Z0-9]+=[0-9]+)?[ ]?(;[ ]?q=[0-9\.]+)?){1}([ ]?,[ ]?([a-zA-Z0-9_\*\+\-]+/[a-zA-Z0-9_\*\+\.\-]+(;[ ]?[a-zA-Z0-9]+=[0-9]+)?[ ]?(;[ ]?q=[0-9\.]+)?))*$
+ name=Accept-Charset, action=drop, size=300, pattern=^([a-zA-Z0-9\*\-]+(;[ ]?q=[0-9\.]+)?){1}([ ]?,[ ]?([a-zA-Z0-9\*\-]+(;[ ]?q=[0-9\.]+)?))*$
+ name=Accept-Encoding, action=drop, size=500, pattern=^([a-zA-Z0-9\*\-]+(;[ ]?q=[0-9\.]+)?){1}([ ]?,[ ]?([a-zA-Z0-9\*\-]+(;[ ]?q=[0-9\.]+)?))*$
+ name=Accept-Language, action=drop, size=200, pattern=^([a-zA-Z\*\-]+[0-9]{0,3}(;[ ]?q=[0-9\.]+)?){1}([ ]?,[ ]?([a-zA-Z\*\-]+[0-9]{0,3}(;[ ]?q=[0-9\.]+)?))*$
+ name=Access-Control-Request-Method, action=drop, size=10, pattern=^[a-zA-Z]+$
+ name=Access-Control-Request-Headers, action=drop, size=500, pattern=^([a-zA-Z0-9-]+){1}([ ]?,[ ]?([a-zA-Z0-9-]+))*$
+ name=Authorization, action=drop, size=4000, pattern=^[a-zA-Z0-9 \+/\$=:]+$
+ name=Cache-Control, action=drop, size=100, pattern=^(no-cache|no-store|max-age=[0-9]+|max-stale(=[0-9]+)?|min-fresh=[0-9]+|no-transform|only-if-chached){1}([ ]?,[ ]?(no-cache|no-store|max-age=[0-9]+|max-stale(=[0-9]+)?|min-fresh=[0-9]+|no-transform|only-if-chached))*$
+ name=Connection, action=drop, size=100, pattern=^([teTE]+,[ ]?)?([a-zA-Z0-9\-]+){1}([ ]?,[ ]?([teTE]+))?$
+ name=Content-Encoding, action=deny, size=100, pattern=^[a-zA-Z0-9\-]+(,[ ]*[a-zA-Z0-9\-]+)*$
+ name=Content-Language, action=drop, size=100, pattern=^([0-9a-zA-Z]{0,8}(-[0-9a-zA-Z]{0,8})*)(,[ ]*([0-9a-zA-Z]{0,8}(-[0-9a-zA-Z]{0,8})*))*$
+ name=Content-Length, action=deny, size=10, pattern=^[0-9]+$
+ name=Content-Location, action=deny, size=200, pattern=^[:/\?#\[\]@!\$&'\(\)\*\+,;=a-zA-Z0-9\._~% \-]+$
+ name=Content-md5, action=deny, size=50, pattern=^[a-zA-Z0-9 \+/\$=:]+$
+ name=Content-Range, action=deny, size=50, pattern=^(bytes[ ]+([0-9]+-[0-9]+)/([0-9]+|\*))$
+ name=Content-Type, action=deny, size=200, pattern=^(["a-zA-Z0-9\*/; =\-]+){1}([ ]?,[ ]?(["a-zA-Z0-9\*/; =\-]+))*$
+ name=Cookie, action=drop, size=3000, pattern=^[:/\?#\[\]@!\$&'\(\)\*\+,;="a-zA-Z0-9\._~% \-]+$
+ name=Cookie2, action=drop, size=3000, pattern=^[:/\?#\[\]@!\$&'\(\)\*\+,;="a-zA-Z0-9\._~% \-]+$
+ name=DNT, action=drop, size=3, pattern=^[0-9]+$
+ name=Expect, action=drop, size=200, pattern=^[a-zA-Z0-9= ;\.,\-]+$
+ name=From, action=drop, size=100, pattern=^[a-zA-Z0-9=@;\.,\(\)\-]+$
+ name=Host, action=drop, size=100, pattern=^[a-zA-Z0-9\.\-]+(:[0-9]+)?$
+ name=If-Invalid, action=drop, size=500, pattern=^[a-zA-Z0-9_\.:;\(\) /\+!\-]+$
+ name=If-Match, action=drop, size=100, pattern=^(W/)?[a-zA-Z0-9=@;\.,\*"\-]+$
+ name=If-Modified-Since, action=drop, size=100, pattern=^[a-zA-Z0-9 :,]+$
+ name=If-None-Match, action=drop, size=100, pattern=^(W/)?[a-zA-Z0-9=@;\.,\*"\-]+$
+ name=If-Range, action=drop, size=100, pattern=^[a-zA-Z0-9=@;\.,\*"\-]+$
+ name=If-Unmodified-Since, action=drop, size=100, pattern=^[a-zA-Z0-9 :,]+$
+ name=If-Valid, action=drop, size=500, pattern=^[a-zA-Z0-9_\.:;\(\) /\+!\-]+$
+ name=Keep-Alive, action=drop, size=20, pattern=^[0-9]+$
+ name=Max-Forwards, action=drop, size=20, pattern=^[0-9]+$
+ name=Origin, action=drop, size=2000, pattern=^[:/\?#\[\]@!\$&'\(\)\*\+,;=a-zA-Z0-9\._~% \-]+$
+ name=Proxy-Authorization, action=drop, size=400, pattern=^[a-zA-Z0-9 \+/\$=:]+$
+ name=Pragma, action=drop, size=200, pattern=^[a-zA-Z0-9= ;\.,\-]+$
+ name=Range, action=drop, size=200, pattern=^[a-zA-Z0-9=_\.:;\(\) /\+!\-]+$
+ name=Referer, action=drop, size=2000, pattern=^[:/\?#\[\]@!\$&'\(\)\*\+,;=a-zA-Z0-9\._~% \-]+$
+ name=TE, action=drop, size=100, pattern=^([a-zA-Z0-9\*\-]+(;[ ]?q=[0-9\.]+)?){1}([ ]?,[ ]?([a-zA-Z0-9\*\-]+(;[ ]?q=[0-9\.]+)?))*$
+ name=Transfer-Encoding, action=deny, size=100, pattern=^(chunked|Chunked|compress|Compress|deflate|Deflate|gzip|Gzip|identity|Identity)([ ]?,[ ]?(chunked|Chunked|compress|Compress|deflate|Deflate|gzip|Gzip|identity|Identity))*$
+ name=Unless-Modified-Since, action=drop, size=100, pattern=^[a-zA-Z0-9 :,]+$
+ name=User-Agent, action=drop, size=300, pattern=^[a-zA-Z0-9]+[a-zA-Z0-9_.:;()\[\]@ /+!=,-]+$
+ name=Upgrade-Insecure-Requests, action=drop, size=1, pattern=^1$
+ name=Via, action=drop, size=100, pattern=^[a-zA-Z0-9_\.:;\(\) /\+!\-]+$
+ name=X-Forwarded-For, action=drop, size=100, pattern=^[a-zA-Z0-9_\.:\-]+(, [a-zA-Z0-9_\.:\-]+)*$
+ name=X-Forwarded-Host, action=drop, size=100, pattern=^[a-zA-Z0-9_\.:\-]+$
+ name=X-Forwarded-Server, action=drop, size=100, pattern=^[a-zA-Z0-9_\.:\-]+$
+ name=X-lori-time-1, action=drop, size=20, pattern=^[0-9]+$
+ name=X-Do-Not-Track, action=drop, size=20, pattern=^[0-9]+$
+
+QS_ResponseHeaderFilter rules:
+
+ name=Age, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Accept-Ranges, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Access-Control-Allow-Origin, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Access-Control-Allow-Methods, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Access-Control-Allow-Headers, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Access-Control-Max-Age, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Access-Control-Allow-Credentials, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Access-Control-Expose-Headers, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Allow, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Cache-Control, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Content-Disposition, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Content-Encoding, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Content-Language, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Content-Length, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Content-Location, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Content-MD5, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Content-Range, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Content-Security-Policy, action=drop, size=8000, pattern=^[\x20-\xFF]*$
+ name=Content-Type, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Connection, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Date, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=ETag, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Expect, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Expires, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Keep-Alive, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Last-Modified, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Location, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Proxy-Authenticate, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Public-Key-Pins, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Public-Key-Pins-Report-Only, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Retry-After, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Pragma, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Server, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Set-Cookie, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Set-Cookie2, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Strict-Transport-Security, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=Vary, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=WWW-Authenticate, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=X-Content-Security-Policy, action=drop, size=8000, pattern=^[\x20-\xFF]*$
+ name=X-Content-Type-Options, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=X-Frame-Options, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+ name=X-XSS-Protection, action=drop, size=4000, pattern=^[\x20-\xFF]*$
+
+mod_qos 11.54

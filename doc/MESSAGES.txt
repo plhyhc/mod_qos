@@ -1,0 +1,76 @@
+mod_qos version 11.54
+mod_qos(001): QS_ClientEventLimitCount directives can't be added/removed by graceful restart. A server restart is required to apply the new configuration!
+mod_qos(002): failed to create shared memory (ACT)(%s): %s (%lu bytes)
+mod_qos(002): failed to create shared memory (client control)(%s): %s (%d bytes)
+mod_qos(003): request level rule %s has no concurrent request limitations
+mod_qos(004): failed to create mutex (ACT)(%s): %s
+mod_qos(004): failed to create mutex (client control)(%s): %s
+mod_qos(006): could not compile request header filter rules: %s
+mod_qos(006): could not compile response header filter rules: %s
+mod_qos(008): could not create supervisor thread (%s), disable request rate enforcement
+mod_qos(009): failed to initialize the qslog facility '%s'
+mod_qos(009): found default error document '%s'. Use the QS_ErrorPage directive to override this default page.
+mod_qos(009): loaded MPM is '%s' but mod_qos should be used with MPM 'Worker' only.
+mod_qos(009): mod_parp not available (required by some directives)
+mod_qos(009): mod_unique_id not available (mod_qos generates simple request id if required)
+mod_qos(009): running in 'log only' mode - rules are NOT enforced!
+mod_qos(009): server version is %d.%d but mod_qos should be used with Apache 2.2 or 2.4 only.
+mod_qos(010): access denied%s, QS_LocRequestLimit* rule: %s(%d), concurrent requests=%d, c=%s, id=%s
+mod_qos(011): access denied, QS_CondLocRequestLimitMatch rule: %s(%d), concurrent requests=%d, c=%s, id=%s
+mod_qos(012): access denied%s, QS_EventRequestLimit rule: %s(%d), concurrent requests=%d, c=%s, id=%s
+mod_qos(013): access denied%s, QS_%sEventLimitCount rule: %s, max=%d, current=%d, c=%s, id=%s
+mod_qos(021): session cookie verification failed, decoding failed, id=%s
+mod_qos(023): session cookie verification failed, expired, id=%s
+mod_qos(025): failed to create session cookie, id=%s
+mod_qos(030): access denied%s, QS_SrvMaxConn rule: max=%d, concurrent connections=%d, c=%s
+mod_qos(031): access denied (previously), QS_SrvMaxConnPerIP rule: max=%d, concurrent connections=%d, message repeated %d times, c=%s
+mod_qos(031): access denied%s, QS_SrvMaxConnPerIP rule: max=%d, concurrent connections=%d, c=%s
+mod_qos(031): access denied%s, QS_SrvMaxConnPerIP rule: max=%d, concurrent connections=%d, message repeated %d times, c=%s
+mod_qos(034): %s, QS_SrvMinDataRate rule (enforce keep-alive), c=%s
+mod_qos(034): %s, QS_SrvMinDataRate rule (%s%s): min=%d, this connection=%d, c=%s
+mod_qos(035): QS_SrvMaxConn: no free IP slot available! Check log for unclean child exit and consider to do a graceful server restart if this condition persists.
+mod_qos(036): QS_SrvMinDataRate: unexpected connection status! connections=%d, cal. request rate=%d, max. limit=%d. Check log for unclean child exit and consider to do a graceful server restart if this condition persists.
+mod_qos(037): loaded MPM is 'event' and the QS_KeepAliveTimeout/QS_MaxKeepAliveRequests directives can't be used.
+mod_qos(038): DSCP, failed to set socket options, QS_Set_DSCP=%s, socket=%s, rc=%d, id=%s
+mod_qos(040): access denied, %s rule id: %s (%s), action=%s, c=%s, id=%s
+mod_qos(041): access denied, no permit rule match, action=%s, c=%s, id=%s
+mod_qos(042): drop %s header%s: '%s: %s', %s, c=%s, id=%s
+mod_qos(043): access denied%s, %s header: '%s: %s', %s, c=%s, id=%s
+mod_qos(044): access denied%s, QS_LimitRequestBody: invalid content-length header, c=%s, id=%s
+mod_qos(044): access denied%s, QS_LimitRequestBody: max=%ld this=%ld, c=%s, id=%s
+mod_qos(045): access denied, invalid request line: can't parse uri, c=%s, id=%s
+mod_qos(046): access denied, invalid url encoding, action=%s, c=%s, id=%s
+mod_qos(047): access denied, reached milestone '%d' (%s), user has already passed '%s', action=%s, c=%s, id=%s
+mod_qos(048): access denied, invalid JSON syntax (%s), action=%s, c=%s, id=%s
+mod_qos(049): redirect to %s, var=%s, action=%s, c=%s, id=%s
+mod_qos(050): request rate limit, rule: %s(%ld), req/sec=%ld, delay=%dms%s
+mod_qos(051): request rate limit, rule: %s(%ld), req/sec=%ld, delay=%dms
+mod_qos(060): access denied (previously), QS_ClientEventBlockCount rule: max=%d, current=%d, message repeated %d times, c=%s
+mod_qos(060): access denied, QS_ClientEventBlockCount rule: max=%d, current=%d, age=%ld, c=%s
+mod_qos(060): access denied, QS_ClientEventBlockCount rule: max=%d, current=%d, message repeated %d times, c=%s
+mod_qos(060): access denied%s, QS_ClientEventBlockCount rule: max=%d, current=%d, age=%ld, c=%s
+mod_qos(061): request rate limit, rule: QS_Event(%d), req/sec=%ld, delay=%dms%s
+mod_qos(062): request rate limit, rule: QS_Event(%d), req/sec=%ld, delay=%dms
+mod_qos(065): access denied%s, QS_ClientEventRequestLimit rule: max=%d, current=%d, c=%s, id=%s
+mod_qos(066): access denied%s, QS_ClientPrefer rule (penalty=%d 0x%02x): max=%d, concurrent connections=%d, c=%s
+mod_qos(067): access denied%s, QS_%sClientEventLimitCount rule: event=%s, max=%d, current=%d, age=%ld, c=%s
+mod_qos(068): QS_ClientSerialize exceeds limit of 5 minutes, c=%s, id=%s
+mod_qos(068): QS_SrvSerialize exceeds limit of %d seconds, id=%s
+mod_qos(069): no valid IP header found (@%s): header '%s' not available, fallback to connection's IP %s, id=%s
+mod_qos(069): no valid IP header found (@%s): invalid header value '%s', fallback to connection's IP %s, id=%s
+mod_qos(070): console, not acceptable, client data store has not been enabled, id=%s
+mod_qos(070): console, not acceptable, invalid ip/wrong format, id=%s
+mod_qos(070): console, not acceptable, missing request query (action/address), id=%s
+mod_qos(070): console, not acceptable, qos client control has not been activated, id=%s
+mod_qos(070): console, not acceptable, unknown action '%s', id=%s
+mod_qos(071): console, action '%s' applied to client ip entry '%s', id=%s
+mod_qos(071): console, add new client ip entry '%s', is=%s
+mod_qos(072): handler has been disabled for this host, id=%s
+mod_qos(080): Can't generate random data, id=%s
+mod_qos(083): Can't generate random data.
+mod_qos(100): QS_ClientGeoCountryDB has not been configured
+mod_qos(101): access denied%s, QS_ClientGeoCountryPriv rule: max=%d, concurrent connections=%d, c=%s country=%s
+mod_qos(147): access denied, reached milestone '%d' (%s), earlier than expected (right after %ld instead of %d seconds), action=%s, c=%s, id=%s
+mod_qos(166): unexpected connection dispatching, skipping connection counter update for QS_ClientPrefer rule, c=%s
+mod_qos(167): closing connection at process connection hook, c=%s
+mod_qos(200): { "scoreboard": { "open": %d, "waiting": %d, "read": %d, "write": %d, "keepalive": %d, "start": %d, "log": %d, "dns": %d, "closing": %d, "finishing": %d, "idle": %d }, "maxclients": { "max": %d, "busy": %d }%s }
